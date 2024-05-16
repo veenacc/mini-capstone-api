@@ -12,11 +12,14 @@ class ProductsController < ApplicationController
   end
 
   def create
+    #this is hardcoded create statement
     # @product = Product.new(name: "plum", 
     #             price:4, 
     #             image_url:"https://www.shutterstock.com/image-photo/      pair-purple-plums-leaf-isolated-260nw-2030688533.jpg", 
                   #description:"red plums")
 
+    #  Input values are posted from the website and saved into each variable       
+    # commas in between variables      
     @product = Product.new(name: params[:input_name], 
                 price: params[:input_price], 
                 image_url: params[:input_image_url], 
@@ -24,5 +27,16 @@ class ProductsController < ApplicationController
 
     @product.save
     render template: "products/show"
+  end
+
+  def update
+    @product =Product.find_by(id: params[:id])
+    @product.name =params[:name]
+    @product.price = params[:price]
+    @product.image_url = params[:image_url]
+    @product.description =params[:description]
+    @product.save
+    render template: "products/show"
+  
   end
 end

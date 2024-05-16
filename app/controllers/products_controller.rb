@@ -31,12 +31,13 @@ class ProductsController < ApplicationController
 
   def update
     @product =Product.find_by(id: params[:id])
-    @product.name =params[:name]
-    @product.price = params[:price]
-    @product.image_url = params[:image_url]
-    @product.description =params[:description]
+    @product.name =params[:name] || @product.name # if updated name is not provided, use default or existing 'name' value
+    @product.price = params[:price] || @product.price
+    @product.image_url = params[:image_url] || @product.image_url
+    @product.description =params[:description] || @product.description
     @product.save
     render template: "products/show"
+    #@product.update( )  -> with commas in between, can update each variable value 
   end
 
   def destroy

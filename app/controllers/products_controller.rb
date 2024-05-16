@@ -37,6 +37,11 @@ class ProductsController < ApplicationController
     @product.description =params[:description]
     @product.save
     render template: "products/show"
-  
+  end
+
+  def destroy
+    @product = Product.find_by(id: params[:id])
+    @product.destroy
+    render json: {message: "Deleted #{params[:id]}"}
   end
 end

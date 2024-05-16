@@ -20,10 +20,10 @@ class ProductsController < ApplicationController
 
     #  Input values are posted from the website and saved into each variable       
     # commas in between variables      
-    @product = Product.new(name: params[:input_name], 
-                price: params[:input_price], 
-                image_url: params[:input_image_url], 
-                description: params[:input_description])
+    @product = Product.new(name: params[:name], 
+                price: params[:price], 
+                image_url: params[:image_url], 
+                description: params[:description])
 
     @product.save
     render template: "products/show"

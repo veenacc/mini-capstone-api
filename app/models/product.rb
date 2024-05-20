@@ -1,10 +1,17 @@
 class Product < ApplicationRecord
   # write methods to change variables 
+  validates :name, uniqueness: true
+  validates :price, numericality: {greater_than:0}
+
   def is_discounted
-    if price <= 10
-      p true
+    if price 
+      if price < 10
+        p true
+      else
+        p false
+      end
     else
-      p false
+      p "na"
     end
   end
 
@@ -13,8 +20,13 @@ class Product < ApplicationRecord
   end
 
   def total
-    t =tax(price)
-    total = price + t
-    p total
+    if price
+
+      t =tax(price)
+      total = price + t
+      p total
+    else
+      p "na"
+    end
   end
 end

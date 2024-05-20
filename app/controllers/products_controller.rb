@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all
-    #render json:{mesg: "all products"}
+    # render json:{mesg: "all products"}
     render template: "products/index"
   end
 
@@ -24,9 +24,12 @@ class ProductsController < ApplicationController
                 price: params[:price], 
                 image_url: params[:image_url], 
                 description: params[:description])
-
-    @product.save
-    render template: "products/show"
+    
+    if @product.save
+      render template: "products/show"
+    else
+      render json: {error: @product.errors.full_messages}
+    end
   end
 
   def update
@@ -35,8 +38,11 @@ class ProductsController < ApplicationController
     @product.price = params[:price] || @product.price
     @product.image_url = params[:image_url] || @product.image_url
     @product.description =params[:description] || @product.description
-    @product.save
-    render template: "products/show"
+    if @product.save
+      render template: "products/show"
+    else
+      render json: {error: @product.errors.full_messages}
+    end
     #@product.update( )  -> with commas in between, can update each variable value 
   end
 

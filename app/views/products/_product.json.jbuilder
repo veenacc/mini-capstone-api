@@ -11,3 +11,4 @@ json.updated_at product.updated_at
 json.is_discounted product.is_discounted
 json.total product.total
 json.item_count product.item_count
+json.supplier_id product.supplier_id

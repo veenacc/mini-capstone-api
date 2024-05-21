@@ -27,8 +27,8 @@
 # supplier1 =Supplier.new(name:"supplier1", email:"sup1@gmail.com", phone_number:"777-999")
 # supplier1.save
 
-supplier2 =Supplier.new(name:"supplier2", email:"sup2@gmail.com", phone_number:"888-555")
-supplier2.save
+# supplier2 =Supplier.new(name:"supplier2", email:"sup2@gmail.com", phone_number:"888-555")
+# supplier2.save
 
-supplier3 =Supplier.new(name:"supplier3", email:"sup3@gmail.com", phone_number:"999-777")
-supplier3.save
+# supplier3 =Supplier.new(name:"supplier3", email:"sup3@gmail.com", phone_number:"999-777")
+# supplier3.save

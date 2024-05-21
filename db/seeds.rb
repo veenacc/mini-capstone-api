@@ -22,3 +22,13 @@
 
 # product5 =Product.new(name:"Banana", price:1, image_url:"https://www.shutterstock.com/image-photo/banana-cluster-isolated-600nw-575528746.jpg" ,description:"yellow bananas")
 # product5.save
+
+############################ Add supplier data
+# supplier1 =Supplier.new(name:"supplier1", email:"sup1@gmail.com", phone_number:"777-999")
+# supplier1.save
+
+supplier2 =Supplier.new(name:"supplier2", email:"sup2@gmail.com", phone_number:"888-555")
+supplier2.save
+
+supplier3 =Supplier.new(name:"supplier3", email:"sup3@gmail.com", phone_number:"999-777")
+supplier3.save

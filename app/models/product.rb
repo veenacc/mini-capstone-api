@@ -2,6 +2,7 @@ class Product < ApplicationRecord
   # write methods to change variables 
   validates :name, uniqueness: true
   validates :price, numericality: {greater_than:0}
+  validates :item_count, numericality
 
   def is_discounted
     if price 

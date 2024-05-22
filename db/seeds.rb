@@ -46,3 +46,17 @@
 
 # image3 =Image.new(url:"https://media.post.rvohealth.io/wp-content/uploads/2022/01/grapes-732x549-thumbnail.jpg", product_id:3)
 # image3.save
+
+
+# peach
+# https://canadianfoodfocus.org/wp-content/uploads/2020/09/white-peaches.jpg
+# https://images.unsplash.com/photo-1570978561297-793391262fea?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGVhY2h8ZW58MHx8MHx8fDA%3D
+
+# banana
+
+# https://www.shutterstock.com/image-photo/bunch-bananas-isolated-on-white-600nw-1722111529.jpg
+# https://images.everydayhealth.com/images/diet-nutrition/all-about-bananas-nutrition-facts-health-benefits-recipes-and-more-rm-722x406.jpg
+
+# plum
+# https://images.immediate.co.uk/production/volatile/sites/30/2019/09/Plums-in-a-tree-4a97a61.jpg
+# https://www.shutterstock.com/shutterstock/photos/645293734/display_1500/stock-photo-red-cherry-plum-with-green-leaves-isolated-on-white-background-645293734.jpg

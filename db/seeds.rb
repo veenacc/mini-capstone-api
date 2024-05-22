@@ -32,3 +32,17 @@
 
 # supplier3 =Supplier.new(name:"supplier3", email:"sup3@gmail.com", phone_number:"999-777")
 # supplier3.save
+
+################ Add data to images table
+
+# image1 =Image.new(url:"https://domf5oio6qrcr.cloudfront.net/medialibrary/11525/0a5ae820-7051-4495-bcca-61bf02897472.jpg", product_id:1)
+# image1.save
+
+# image2 =Image.new(url:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Orange-Fruit-Pieces.jpg/2560px-Orange-Fruit-Pieces.jpg", product_id:2)
+# image2.save
+
+# image3 =Image.new(url:"https://canadianfoodfocus.org/wp-content/uploads/2020/09/table-grapes.jpg", product_id:3)
+# image3.save
+
+# image3 =Image.new(url:"https://media.post.rvohealth.io/wp-content/uploads/2022/01/grapes-732x549-thumbnail.jpg", product_id:3)
+# image3.save

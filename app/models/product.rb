@@ -4,6 +4,10 @@ class Product < ApplicationRecord
   validates :price, numericality: {greater_than:0}
   #validates :item_count, numericality
 
+  ####### access supplier information using the supplier_id from products table
+  belongs_to :supplier
+  ########################################################
+  
   def is_discounted
     if price 
       if price < 10

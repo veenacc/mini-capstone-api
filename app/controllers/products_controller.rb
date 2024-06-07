@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   def index
+    p current_user
     @products = Product.all
     # render json:{mesg: "all products"}
     render template: "products/index"

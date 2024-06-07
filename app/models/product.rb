@@ -7,6 +7,7 @@ class Product < ApplicationRecord
   ####### access supplier information using the supplier_id from products table
   belongs_to :supplier
   has_many :images
+  has_many :orders
   ########################################################
 
   def is_discounted

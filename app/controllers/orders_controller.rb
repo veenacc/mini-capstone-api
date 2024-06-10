@@ -27,13 +27,13 @@ class OrdersController < ApplicationController
   def show
     # render json:{msg: "one order"}
     # @order = Order.find_by(id: params[:id])
-    if @order = Order.find_by(id: params[:id], user_id: current_user.id)
+    @order = Order.find_by(id: params[:id], user_id: current_user.id)
 
     # if current_user.id == @order.user_id
-      render template: "orders/show"
-    else
-      render json: {message: "buzz off"}
-    end
+    #   render template: "orders/show"
+    # else
+    #   render json: {message: "buzz off"}
+    # end
   end
 
    # controller function to show all  orders 

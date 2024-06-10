@@ -7,20 +7,20 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  get "/products" => "products#index"
-  get "/products/:id" => "products#show"
-  post "/products" => "products#create"
-  patch "/products/:id" =>"products#update"
-  delete "/products/:id" => "products#destroy"
+  get "/products" => "products#index" #everyone
+  get "/products/:id" => "products#show"  #everyone
+  post "/products" => "products#create" #admin
+  patch "/products/:id" =>"products#update" #admin
+  delete "/products/:id" => "products#destroy"  #admin
 
-  get "/suppliers" => "suppliers#index"
-  get "/suppliers/:id" => "suppliers#show"
+  get "/suppliers" => "suppliers#index" #admin
+  get "/suppliers/:id" => "suppliers#show"  #admin
 
-  post "/users" => "users#create"
-  post "/sessions" => "sessions#create"
+  post "/users" => "users#create" #everyone
+  post "/sessions" => "sessions#create" #everyone
 
-  post "/orders"  => "orders#create"
-  get "/orders"  => "orders#index"
-  get "/orders/:id"  => "orders#show"
+  post "/orders"  => "orders#create"  #logged in
+  get "/orders"  => "orders#index"  #logged in
+  get "/orders/:id"  => "orders#show" #logged in
 
 end

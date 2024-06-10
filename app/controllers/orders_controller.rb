@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-
+  before_action :authenticate_user;
   # controller function to create a new order
   def create
     p current_user

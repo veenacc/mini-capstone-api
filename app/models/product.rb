@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   # write methods to change variables 
-  validates :name, uniqueness: true
+  # validates :name, uniqueness: true
   validates :price, numericality: {greater_than:0}
   #validates :item_count, numericality
 
@@ -8,6 +8,7 @@ class Product < ApplicationRecord
   belongs_to :supplier
   has_many :images
   has_many :orders
+  has_many :category_products
   ########################################################
 
   def is_discounted

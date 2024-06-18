@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   
   before_action :authenticate_admin, only: [:create, :update, :destroy]
   def index
-    p current_user
+    # p current_user
     @products = Product.all
     # render json:{mesg: "all products"}
     render template: "products/index"

@@ -7,17 +7,24 @@ class OrdersController < ApplicationController
 
     subtotal=0
     carted_product.each do |cp|
-      subtotal+= cp.product.price * cp.qauntity
+      subtotal+= cp.product.price * cp.quantity
     end
+    tax = subtotal * 0.09
+    total=subtotal +tax
 
     @order =Order.new(
       user_id: current_user.id,
-      subtotal: 10,
-      tax: 1,
-      total: 11
+      subtotal: subtotal,
+      tax: tax,
+      total: total
 
     )
     if @order.save
+      
+      carted_product.each do |cp|
+        cp.update(status: "purchased")
+        cp.update(order_id: @order.id)
+      end
       render template: "orders/show"
       # render json: {message: "order saved"}
     else

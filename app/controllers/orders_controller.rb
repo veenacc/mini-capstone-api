@@ -2,15 +2,19 @@ class OrdersController < ApplicationController
   before_action :authenticate_user;
   # controller function to create a new order
   def create
-    p current_user
+    
+    carted_product=CartedProduct.where(user_id: current_user.id, status:"carted")
+
+    subtotal=0
+    carted_product.each do |cp|
+      subtotal+= cp.product.price * cp.qauntity
+    end
+
     @order =Order.new(
-      # user_id: params[:user_id],
       user_id: current_user.id,
-      product_id: params[:product_id],
-      quantity: params[:quantity],
-      subtotal: params[:subtotal],
-      tax: params[:tax],
-      total: params[:total]
+      subtotal: 10,
+      tax: 1,
+      total: 11
 
     )
     if @order.save

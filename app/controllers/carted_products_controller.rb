@@ -2,8 +2,8 @@ class CartedProductsController < ApplicationController
 
   def index
     # render json: {message: "Hello index"}
-    p current_user
-    @carted_products = CartedProduct.all
+    # p current_user
+    @carted_products = CartedProduct.where(user_id: current_user.id, status: "carted")
     render template: "carted_products/index"
   end
 
@@ -11,14 +11,14 @@ class CartedProductsController < ApplicationController
     # render json: {message: "Hello create"}
 
     @carted_product = CartedProduct.new(
-      user_id: params[:user_id], 
+      user_id: current_user.id, 
       product_id: params[:product_id],  
       quantity: params[:quantity],
       status: "carted",
       order_id: nil
       )
     if @carted_product.save
-      render json: {message: "carted"}
+      render template: "carted_products/show"
     else
       render json: {error: @carted_product.errors.full_messages}
     end

@@ -23,4 +23,10 @@ Rails.application.routes.draw do
   get "/orders"  => "orders#index"  #logged in
   get "/orders/:id"  => "orders#show" #logged in
 
+
+  ###### Routes for carted products
+  #  get cart :carted_products
+  get "/carted_products" => "carted_products#index"
+  post "/carted_products" => "carted_products#create"
+
 end
